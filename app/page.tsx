@@ -1,12 +1,7 @@
-import { logOut } from "@/lib/auth-actions";
-
 export default function HomePage() {
   return (
-    <div>
-      <p>HomePage</p>
-      <form action={logOut}>
-        <button type="submit">logOut</button>
-      </form>
+    <div className="flex h-full items-center justify-center">
+      <h1 className="text-2xl font-bold">Vítejte v aplikaci</h1>
     </div>
   );
 }

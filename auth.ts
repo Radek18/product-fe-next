@@ -6,11 +6,6 @@ declare module "next-auth" {
     accessToken: string;
     idToken: string;
   }
-
-  interface JWT {
-    accessToken: string;
-    idToken: string;
-  }
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
