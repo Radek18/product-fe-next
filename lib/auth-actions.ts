@@ -13,10 +13,10 @@ export async function logOut() {
         post_logout_redirect_uri: process.env.END_SESSION_URL,
       },
     });
-
-    await signOut();
   } catch (err) {
     console.error(err);
     throw new Error("Failed to log out.");
   }
+
+  await signOut();
 }
