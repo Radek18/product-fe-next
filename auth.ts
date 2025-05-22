@@ -65,10 +65,19 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       const nowTimeStamp = Math.floor(Date.now() / 1000);
 
       if (account) {
-        token.accessToken = account.access_token;
-        token.idToken = account.id_token;
-        token.refreshToken = account.refresh_token;
-        token.expiresAt = account.expires_at;
+        if (
+          account.access_token &&
+          account.id_token &&
+          account.refresh_token &&
+          account.expires_at
+        ) {
+          token.accessToken = account.access_token;
+          token.idToken = account.id_token;
+          token.refreshToken = account.refresh_token;
+          token.expiresAt = account.expires_at;
+        } else {
+          throw new Error("Missing token data from account object.");
+        }
         return token;
       } else if (nowTimeStamp < token.expiresAt) {
         return token;
