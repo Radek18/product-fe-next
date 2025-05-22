@@ -10,7 +10,7 @@ export async function logOut() {
     await axios.get(process.env.END_SESSION_URL as string, {
       params: {
         id_token_hint: idToken,
-        post_logout_redirect_uri: process.env.END_SESSION_URL,
+        post_logout_redirect_uri: process.env.POST_LOGOUT_REDIRECT_URI,
       },
     });
   } catch (err) {
