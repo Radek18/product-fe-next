@@ -56,7 +56,11 @@ async function refreshToken(token: JWT) {
 }
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [Keycloak],
+  providers: [Keycloak({
+    clientId: process.env.AUTH_KEYCLOAK_ID!,
+    clientSecret: process.env.AUTH_KEYCLOAK_SECRET!,
+    issuer: process.env.AUTH_KEYCLOAK_ISSUER!,
+  })],
   callbacks: {
     authorized({ auth }) {
       return !!auth?.user;

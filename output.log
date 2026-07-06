@@ -1,0 +1,27 @@
+nohup: ignoring input
+
+> product-fe-next@0.1.0 start
+> next start -p 3000 -H 127.0.0.1
+
+  ▲ Next.js 14.2.14
+  - Local:        http://127.0.0.1:3000
+  - Network:      http://127.0.0.1:3000
+
+ ✓ Starting...
+ ✓ Ready in 987ms
+[31m[auth][error][0m CallbackRouteError: Read more at https://errors.authjs.dev#callbackrouteerror
+[31m[auth][cause][0m: ak: response parameter "iss" (issuer) missing
+    at /home/product-fe-next/.next/server/chunks/904.js:382:28723
+    at iW (/home/product-fe-next/.next/server/chunks/904.js:382:29484)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async i3 (/home/product-fe-next/.next/server/chunks/904.js:382:36910)
+    at async rn (/home/product-fe-next/.next/server/chunks/904.js:382:48228)
+    at async ro (/home/product-fe-next/.next/server/chunks/904.js:382:52981)
+    at async /home/product-fe-next/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:36957
+    at async eC.execute (/home/product-fe-next/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:27552)
+    at async eC.handle (/home/product-fe-next/node_modules/next/dist/compiled/next-server/app-route.runtime.prod.js:6:38291)
+    at async doRender (/home/product-fe-next/node_modules/next/dist/server/base-server.js:1345:42)
+[31m[auth][details][0m: {
+  "provider": "keycloak"
+}
+Killed
